@@ -1,9 +1,7 @@
 # hw-project-RumeysaTurkerr
 Tour Agency System will lead travelers to make more enjoyable journeys...
 
-# Functional Requirements
-
-## Tour Agency System
+## Functional Requirements
 
 ### Actors/Entities:
  
@@ -23,7 +21,7 @@ Tour Agency System will lead travelers to make more enjoyable journeys...
 2.	Buying a ticket 
 3.	Cancelling a ticket
 
-##### For manager:
+#### For manager:
 
 1.	Listing tours
 2.	Editing tours
