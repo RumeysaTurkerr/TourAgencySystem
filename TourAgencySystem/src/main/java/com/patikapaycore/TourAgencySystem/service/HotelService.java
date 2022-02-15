@@ -10,9 +10,9 @@ public interface HotelService {
 
         Hotel getHotel(Integer id);
 
-        boolean addHotel(Hotel hotel);
+        void addHotel(Hotel hotel);
 
-        Hotel updateHotel(String name, Hotel hotel);
+        Hotel updateHotel(Integer id, Hotel hotel);
 
         boolean deleteHotel(Integer id);
 
