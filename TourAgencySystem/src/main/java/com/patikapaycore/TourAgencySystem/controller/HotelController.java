@@ -1,5 +1,5 @@
 package com.patikapaycore.TourAgencySystem.controller;
-import com.patikapaycore.TourAgencySystem.model.Hotel;
+import com.patikapaycore.TourAgencySystem.model.entity.Hotel;
 import com.patikapaycore.TourAgencySystem.model.HotelDTO;
 import com.patikapaycore.TourAgencySystem.model.mapper.HotelMapper;
 import com.patikapaycore.TourAgencySystem.service.HotelService;
@@ -11,9 +11,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Validated
 @RestController

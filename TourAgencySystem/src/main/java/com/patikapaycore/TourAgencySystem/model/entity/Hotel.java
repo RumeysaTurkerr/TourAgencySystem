@@ -1,4 +1,4 @@
-package com.patikapaycore.TourAgencySystem.model;
+package com.patikapaycore.TourAgencySystem.model.entity;
 import com.patikapaycore.TourAgencySystem.model.Address;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

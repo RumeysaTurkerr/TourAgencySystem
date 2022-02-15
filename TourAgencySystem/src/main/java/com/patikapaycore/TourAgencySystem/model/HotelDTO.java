@@ -9,7 +9,8 @@ import java.util.StringJoiner;
 public class HotelDTO {
     @NotBlank
     private String name;
-
+    @NotBlank
+    private String type;
     @NotEmpty
     private List<@Valid Address> addresses;
 

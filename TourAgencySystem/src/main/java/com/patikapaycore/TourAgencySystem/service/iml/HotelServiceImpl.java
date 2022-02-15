@@ -1,7 +1,7 @@
 package com.patikapaycore.TourAgencySystem.service.iml;
 import com.patikapaycore.TourAgencySystem.exception.NotFoundException;
 import com.patikapaycore.TourAgencySystem.model.Address;
-import com.patikapaycore.TourAgencySystem.model.Hotel;
+import com.patikapaycore.TourAgencySystem.model.entity.Hotel;
 import com.patikapaycore.TourAgencySystem.repository.HotelRepository;
 import com.patikapaycore.TourAgencySystem.service.HotelService;
 import lombok.RequiredArgsConstructor;

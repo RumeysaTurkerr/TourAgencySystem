@@ -1,6 +1,6 @@
 package com.patikapaycore.TourAgencySystem.service;
 
-import com.patikapaycore.TourAgencySystem.model.Hotel;
+import com.patikapaycore.TourAgencySystem.model.entity.Hotel;
 
 import java.util.List;
 
