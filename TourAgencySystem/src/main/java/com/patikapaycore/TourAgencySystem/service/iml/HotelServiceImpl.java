@@ -1,7 +1,11 @@
 package com.patikapaycore.TourAgencySystem.service.iml;
 import com.patikapaycore.TourAgencySystem.exception.NotFoundException;
 import com.patikapaycore.TourAgencySystem.model.Address;
-import com.patikapaycore.TourAgencySystem.model.Hotel;
+
+import com.patikapaycore.TourAgencySystem.model.entity.Hotel;
+
+import com.patikapaycore.TourAgencySystem.model.entity.Hotel;
+
 import com.patikapaycore.TourAgencySystem.repository.HotelRepository;
 import com.patikapaycore.TourAgencySystem.service.HotelService;
 import lombok.RequiredArgsConstructor;
@@ -48,11 +52,9 @@ public class HotelServiceImpl implements HotelService {
         return true;
     }
 
-    // java8 playground again :)
-    // ----------------------------------------------------------------------------------
     private List<Address> getAddressCityStartsWith(String prefix) {
-        List<Hotel> allAirports = getAllHotels();
-        return allAirports.stream()
+        List<Hotel> allHotels = getAllHotels();
+        return allHotels.stream()
                 .map(Hotel::getAddresses)
                 .flatMap(Collection::stream)
                 .distinct()
@@ -71,8 +73,8 @@ public class HotelServiceImpl implements HotelService {
     }
 
     private void reduceAddressListToCityNameAndStreetCode() {
-        List<Hotel> allAirports = getAllHotels();
-        String reducedAddressList = allAirports.stream()
+        List<Hotel> allHotels = getAllHotels();
+        String reducedAddressList = allHotels.stream()
                 .map(Hotel::getAddresses)
                 .flatMap(Collection::stream)
                 .map(address -> address.getCity() + " " + address.getStreetCode())
@@ -81,24 +83,23 @@ public class HotelServiceImpl implements HotelService {
         System.out.println("Reduced address List : " + reducedAddressList);
     }
 
-    private String getCombinedAddressOfBoth(Hotel airport1, Hotel airport2) {
-        // Airports check here!
-        // I assume that there is nothing bad here :) and enjoy with BiFunction sample
+    private String getCombinedAddressOfBoth(Hotel hotel1, Hotel hotel2) {
+
         BiFunction<Hotel, Hotel, String> function = (a1, a2) -> a1.getAddresses().get(0).getCity() + "-" + a1.getAddresses().get(0).getStreetCode()
                 + " ------- " +
                 a2.getAddresses().get(0).getCity() + "-" + a2.getAddresses().get(0).getStreetCode();
 
         // Gets combined Address String
-        return function.apply(airport1, airport2);
+        return function.apply(hotel1, hotel2);
     }
 
-    private void consumeHotelAddresses(Integer airportId) {
-        Hotel airport = hotelRepository.getById(airportId);
+    private void consumeHotelAddresses(Integer hotelId) {
+        Hotel hotel = hotelRepository.getById(hotelId);
 
-        // Defining a consumer for airport address list
-        Consumer<Hotel> airportConsumer = air -> air.getAddresses().forEach(System.out::println);
 
-        airportConsumer.accept(airport);
+        Consumer<Hotel> hotelConsumer = hotell -> hotell.getAddresses().forEach(System.out::println);
+
+        hotelConsumer.accept(hotel);
     }
 
 }
